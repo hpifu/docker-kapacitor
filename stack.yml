@@ -14,15 +14,8 @@ services:
       - "/var/docker/kapacitor/conf/kapacitor.conf:/etc/kapacitor/kapacitor.conf:ro"
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
-      - kapacitornet
-      - influxdbnet
-      - smtpnet
+      - online
 networks:
-  kapacitornet:
-    name: kapacitornet
-  influxdbnet:
+  online:
     external: true
-    name: influxdbnet
-  smtpnet:
-    external: true
-    name: smtpnet
+    name: online
